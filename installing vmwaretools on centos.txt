@@ -1,0 +1,35 @@
+yum install perl gcc kernel-devel
+
+-- check versions of both system kernel and kernel-devel
+
+uname -r
+
+rpm -q kernel-devel
+
+--if vers are different run below command to update system kernel otherwise skip.
+
+yum -y upgrade kernel
+
+reboot
+
+mount vmwaretools setup from vcenter or esxi host
+
+mkdir /mnt/cdrom
+
+mount /dev/cdrom /mnt/cdrom
+
+cp /mnt/cdrom/VMwareTools-10.3.24-18733423.tar.gz /tmp
+
+cd /tmp
+
+tar -zxvf VMwareTools-10.3.24-18733423.tar.gz
+
+clear 
+
+cd vmware-tools-distrib
+
+./vmware-install.pl
+
+yes
+
+now press enter to proceed with default choices
